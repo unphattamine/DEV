@@ -20,14 +20,29 @@ function weatherCall(city){
     })
     .then(function(weather) {
         console.log(weather);
-        document.getElementById("weather").innerHTML =  weather.current.summary + " " +  weather.current.temperature + "\°C" + ", Wind speed " + weather.current.wind.speed + ", Direction:" + weather.current.wind.dir + ", Angle: " + weather.current.wind.angle;
+        try {
+            if (weather.detail.includes("exist") === true){
+                alert(weather.detail);
+                return;
+                }
+            }
+        catch {
+            console.log(weather.detail);
+            document.getElementById("weather").innerHTML =  weather.current.summary + " " +  weather.current.temperature + "\°C" + ", Wind speed " + weather.current.wind.speed + ", Direction:" + weather.current.wind.dir + ", Angle: " + weather.current.wind.angle;
+        }
+        //console.log(weather.detail);
+        //document.getElementById("weather").innerHTML =  weather.current.summary + " " +  weather.current.temperature + "\°C" + ", Wind speed " + weather.current.wind.speed + ", Direction:" + weather.current.wind.dir + ", Angle: " + weather.current.wind.angle;
     }) 
 }
 
-
-function printWeather(current){
-    document.getElementById("weather").innerHTML = current;
+function clear(){
+    city.reset;
+    document.getElementById("weather").innerHTML = "";
 }
+
+//function printWeather(current){
+//   document.getElementById("weather").innerHTML = current;
+//}
 
 function main(){
     if (validateCity() == 0){
