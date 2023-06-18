@@ -44,5 +44,8 @@ input[type=text]{
         background-color: #868484;
         color: white;
 }
+.icon {
+    width: 30px;
+}
 
     

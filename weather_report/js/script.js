@@ -27,7 +27,7 @@ function weatherCall(city){
                 }
             }
         catch {
-            document.getElementById("weather").innerHTML =  weather.current.summary + " " +  weather.current.temperature + "\°C" + ", Wind speed " + weather.current.wind.speed + ", Direction:" + weather.current.wind.dir + ", Angle: " + weather.current.wind.angle;
+            document.getElementById("weather").innerHTML =  "<img class=\"icon\" src=\"img/" + weather.current.icon_num + ".png\"></img>"  + " " +  weather.current.summary + " " +  weather.current.temperature + "&#8451" + ", Wind speed " + weather.current.wind.speed + ", Direction:" + weather.current.wind.dir + ", Angle: " + weather.current.wind.angle;
             }   
     }) 
 }
