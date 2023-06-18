@@ -6,14 +6,22 @@
 <script src="js/script.js"></script>
 </head>
 <body>
-
 <h1>IPmrich weather report</h1>
 <form>
     <label for="city">Pick a city:</label>
     <input type="text" id="city" name="city" placeholder="Search...">
-    <button type="button" class="button" onclick=main()>Submit</button>
+    <button type="button" id="submit" class="button" onclick=main()>Submit</button>
     <button class="button" onclick=clear()>Clear</button> 
 </form>
+<script>
+    var input = document.getElementById("city");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("submit").click();
+      }
+    });
+    </script>
 <p id="weather"></p>
 
 </body>

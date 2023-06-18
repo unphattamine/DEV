@@ -22,13 +22,13 @@ function weatherCall(city){
         console.log(weather);
         try {
             if (weather.detail.includes("exist") === true){
-                alert(weather.detail);
+                document.getElementById("weather").innerHTML =  weather.detail;
                 return;
                 }
             }
         catch {
             document.getElementById("weather").innerHTML =  weather.current.summary + " " +  weather.current.temperature + "\°C" + ", Wind speed " + weather.current.wind.speed + ", Direction:" + weather.current.wind.dir + ", Angle: " + weather.current.wind.angle;
-            }
+            }   
     }) 
 }
 
@@ -37,16 +37,9 @@ function clear(){
     document.getElementById("weather").innerHTML = "";
 }
 
-//function printWeather(current){
-//   document.getElementById("weather").innerHTML = current;
-//}
-
 function main(){
     if (validateCity() == 0){
         return;
     }
     weatherCall(city);
-    //const current = weatherCall(city);
-    //printWeather(current);
-
 }
