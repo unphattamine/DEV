@@ -6,10 +6,14 @@ const getCity = () => {
 
 const validateCity = () => {
     city = getCity();
-    if (!city.match(/^[A-Za-z]+$/)){
-        alert("City is invalid!");
+    if (city == ""){
+        document.getElementById("weather").innerHTML =  "Empty input!";
         return 0;
     }
+    else if (!city.match(/^[A-Za-z]+$/)){
+        document.getElementById("weather").innerHTML =  "Invalid city!";
+        return 0;
+    };
 }
 
 function weatherCall(city){
