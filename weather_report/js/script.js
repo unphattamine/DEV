@@ -16,7 +16,7 @@ const validateCity = () => {
     };
 }
 
-function weatherCall(city){ //THIS FUNCTION IS FOR FETCHING WEATHER DATA AND ALSO TO DEMONSTRATE HOW AI CAN FETCH ITS DETAILS
+function weatherCall(city){ 
     let url = "https://www.meteosource.com/api/v1/free/point?place_id=" + city + "&sections=all&timezone=UTC&language=en&units=metric&key=fnaddym2jcdwwc7xw08lafth1t2b4sd1vpj6hwu0";
     fetch(url)
     .then(function(response){
